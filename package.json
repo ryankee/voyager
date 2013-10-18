@@ -1,7 +1,7 @@
 {
   "name": "voyager",
-  "version": "0.0.24",
-  "description": "voyager (Foundation): A nodejs web framework.",
+  "version": "0.0.1",
+  "description": "A nodejs web framework.",
   "main": "voyager.js",
   "scripts": {
     "test": "jasmine-node test/"
