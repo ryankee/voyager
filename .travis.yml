@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- '0.10'
+before_script:
+- npm install -g jasmine-node
+deploy:
+  provider: npm
+  email: davidglivar@gmail.com
+  api_key:
+    secure: e0As3mJGzbNQEbfkSE02UzUotuHywL/sCGKrpRrrDeduYZG25BzSADkOo78KBStlvaxItEMky2oioh2OGdF8a8kQZq4vbW2WUUWQWTk25yoX9kvIQhkZZDSxngXzdr8WRTxbb7/RyU3ooVVjuG74LrgXEyWGc/vir2Yno6yQ2xQ=
+  on:
+    tags: true
+    repo: davidglivar/voyager
