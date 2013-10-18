@@ -1,0 +1,22 @@
+{
+  "name": "",
+  "version": "0.0.0",
+  "description": "{Enter app description here}",
+  "main": "app.js",
+  "scripts": {
+    "start": "./node_modules/voyager/bin/voyager -s"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "author": "",
+  "license": "",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "voyager": "latest",
+    "ejs": "~0.8.4"
+  },
+  "devDependencies": {
+  }
+}

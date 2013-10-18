@@ -1,0 +1,26 @@
+{
+  "name": "voyager",
+  "version": "0.0.1",
+  "description": "A nodejs web framework.",
+  "main": "voyager.js",
+  "scripts": {
+    "test": "jasmine-node test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/davidglivar/voyager.git"
+  },
+  "author": "David Glivar <david@weareflavor.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "f97de43c3eb80ac1114e8841068bea3211022e9b",
+  "dependencies": {
+    "commander": "~2.0.0",
+    "mkdirp": "~0.3.5",
+    "colors": "~0.6.2",
+    "send": "~0.1.4"
+  },
+  "devDependencies": {
+    "ejs": "~0.8.4"
+  }
+}
