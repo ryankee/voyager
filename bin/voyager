@@ -6,7 +6,6 @@
 
 var program = require('commander')
   , child_process = require('child_process')
-  , exec = child_process.exec
   , execFile = child_process.execFile
   , readline = require('readline')
   , colors = require('colors')
@@ -21,6 +20,7 @@ program
   .option('-n, --new [appname]', 'Create a new voyager application')
   .option('-s, --server [port]', 'Start up the voyager server')
   .option('-t, --test', 'Run the voyager tests')
+  .option('-d, --debug', 'Run voyager in debug mode')
   .parse(process.argv);
 
 var pwd = process.env.PWD
@@ -89,26 +89,16 @@ if (program.new) {
 }
 
 if (program.server) {
-  var server = require(path.join(process.env.PWD, 'app', 'server.js'))
-    , port;
+  require(path.join(process.env.PWD, 'app', 'server.js'))
+}
 
-  if (typeof program.server === 'string') {
-    port = parseInt(program.server);
-  } else {
-    port = process.env.PORT || 3000;
-  }
-
-  server.serve(port);
+if (program.debug) {
+  process.env.DEBUG = 'voyager:*';
+  var serverPath = path.join(process.env.PWD, 'app', 'server.js')
+    , server = child_process.spawn('node', [serverPath], { stdio: 'inherit' });
 }
 
 if (program.test) {
-  exec('jasmine-node test/ --verbose', function (err, stdout, stderr) {
-    if (err) {
-      console.error(err);
-    }
-    if (stderr !== '' || stderr !== null) {
-      console.error(stderr);
-    }
-    console.log(stdout);
-  });
+  child_process.spawn('jasmine-node', ['test/', '--verbose'], { stdio: 'inherit' });
 }
+
