@@ -20,7 +20,7 @@ program
   .option('-n, --new [appname]', 'Create a new voyager application')
   .option('-s, --server [port]', 'Start up the voyager server')
   .option('-t, --test', 'Run the voyager tests')
-  .option('-d, --debug', 'Run voyager in debug mode')
+  .option('-d, --debug [namespace]', 'Run voyager in debug mode')
   .parse(process.argv);
 
 var pwd = process.env.PWD
@@ -93,7 +93,11 @@ if (program.server) {
 }
 
 if (program.debug) {
-  process.env.DEBUG = 'voyager:*';
+  if (typeof program.debug === 'string') {
+    process.env.DEBUG = program.debug;
+  } else {
+    process.env.DEBUG = 'voyager:*';
+  }
   var serverPath = path.join(process.env.PWD, 'app', 'server.js')
     , server = child_process.spawn('node', [serverPath], { stdio: 'inherit' });
 }
