@@ -1,5 +1,6 @@
-![voyager](https://raw.github.com/davidglivar/voyager/master/lib/assets/icon.png) voyager [![Build Status](https://travis-ci.org/davidglivar/voyager.png)](https://travis-ci.org/davidglivar/voyager)
-===
+![voyager](/lib/assets/banner-722x280.png)
+
+[![Build Status](https://travis-ci.org/davidglivar/voyager.png)](https://travis-ci.org/davidglivar/voyager)
 
 This is a work in progress, please check back later.
 
